@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
 const CustomerSchema = mongoose.Schema({
-    full_name :{
+    customer_name :{
         type:String,
         require:true
     },
-    street1:{
+    customer_id :{
         type:String,
         require:true
     },
-    street2:{
+    address:{
         type:String,
         require:true
     },
@@ -34,6 +34,10 @@ const CustomerSchema = mongoose.Schema({
         require:true
     },
     status:{
+        type:String,
+        require:true
+    },
+    notes:{
         type:String,
         require:true
     },
