@@ -13,10 +13,15 @@ var app = express();
 const route = require('./routes/route');
 const employee = require('./routes/employee');
 const customer = require('./routes/customer');
+const driver = require('./routes/driver');
 
 //connect to mongodb
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://kranthi:a12341234@ds139138.mlab.com:39138/etrucking_dev', {
+// mongoose.connect('mongodb://kranthi:a12341234@ds139138.mlab.com:39138/etrucking_dev', {
+//   useMongoClient: true,
+//   connectTimeoutMS: 1000
+// });
+mongoose.connect('mongodb://localhost:27017/etrucking', {
   useMongoClient: true,
   connectTimeoutMS: 1000
 });
@@ -47,8 +52,9 @@ app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname,'public')));
 
 app.use('/api', route);
-app.use('/internal',employee);
+app.use('/emp',employee);
 app.use('/customer',customer);
+app.use('/dri',driver);
 
 //testing server
 app.get('/', (req, res )=> {

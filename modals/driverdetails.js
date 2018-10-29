@@ -19,5 +19,5 @@ const ContactSchema = mongoose.Schema({
     }
 });
 
- module.exports = mongoose.model('contact', ContactSchema);
+ module.exports = mongoose.model('driver1', ContactSchema);
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Employee = require('../modals/employee.js')
+const Employee = require('../modals/dispatch')
 
 
 //reterving data
