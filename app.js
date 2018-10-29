@@ -15,6 +15,7 @@ const employee = require('./routes/employee');
 const customer = require('./routes/customer');
 const driver = require('./routes/driver');
 const truck = require('./routes/truck');
+const job = require('./routes/jobs');
 
 
 //connect to mongodb
@@ -55,9 +56,10 @@ app.use(express.static(path.join(__dirname,'public')));
 
 app.use('/api', route);
 app.use('/emp',employee);
-app.use('/customer',customer);
+app.use('/cust',customer);
 app.use('/dri',driver);
 app.use('/tru',truck);
+app.use('/job',job);
 
 //testing server
 app.get('/', (req, res )=> {
