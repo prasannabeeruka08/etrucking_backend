@@ -14,6 +14,8 @@ const route = require('./routes/route');
 const employee = require('./routes/employee');
 const customer = require('./routes/customer');
 const driver = require('./routes/driver');
+const truck = require('./routes/truck');
+
 
 //connect to mongodb
 mongoose.Promise = global.Promise;
@@ -55,6 +57,7 @@ app.use('/api', route);
 app.use('/emp',employee);
 app.use('/customer',customer);
 app.use('/dri',driver);
+app.use('/tru',truck);
 
 //testing server
 app.get('/', (req, res )=> {
