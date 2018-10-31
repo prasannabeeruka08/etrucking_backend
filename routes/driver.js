@@ -13,16 +13,16 @@ router.get('/drivers', (req, res, next)=>{
 //add contact
 router.post('/driver',(req, res, next)=>{
     let newDriver = new Driver({
-        driver_name : req.body.driver_name,
         driver_id : req.body.driver_id,
+        driver_name : req.body.driver_name,
         tt : req.body.tt,
         status : req.body.status
     });
     newDriver.save((err,Driver)=>{
         if(err){
-            res.json({msg: 'failed to add contact : '});
+            res.json({msg: 'fail'});
         }else{
-             res.json({msg: 'contact added successfully'});
+             res.json({msg: 'success'});
         }
     })
 })
