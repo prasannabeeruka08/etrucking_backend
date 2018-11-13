@@ -9,7 +9,7 @@ const CustomerSchema = mongoose.Schema({
         type:String,
         require:true
     },
-    address:{
+    customer_location:{
         type:String,
         require:true
     },

@@ -13,25 +13,16 @@ router.get('/customers', (req, res, next)=>{
 //add contact
 router.post('/customer',(req, res, next)=>{
     let newCustomer = new Customer({
-        customer_name : req.body.customer_name,
         customer_id : req.body.customer_id,
-        address : req.body.address,
-        city : req.body.city,
-        zip : req.body.zip,
-        email : req.body.email,
-        phone : req.body.phone,
-        status : req.body.status,
-        notes : req.body.notes,
-        created_by : req.body.created_by,
-        created_date : req.body.created_date,
-        updated_by : req.body.updated_by,
-        updated_date : req.body.updated_date
+        customer_name : req.body.customer_name,
+        customer_location : req.body.customer_location,
+        status : req.body.status
     });
     newCustomer.save((err,Customer)=>{
         if(err){
-            res.json({msg: 'failed to add contact : '});
+            res.json({msg: 'fail'});
         }else{
-             res.json({msg: 'contact added successfully'});
+             res.json({msg: 'success'});
         }
     })
 })
