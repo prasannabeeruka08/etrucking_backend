@@ -12,6 +12,7 @@
     "body-parser": "^1.17.1",
     "cors": "^2.8.1",
     "express": "^4.15.2",
+    "jquery-datetimepicker": "^2.5.20",
     "mongoose": "^4.13.12",
     "nodemon": "^1.17.3",
     "npm": "^6.0.0"

@@ -1,11 +1,19 @@
 const mongoose = require('mongoose');
 
 const ContactSchema = mongoose.Schema({
-    driver_id :{
+    customer_name :{
         type:String,
         require:true
     },
-    driver_name:{
+    customer_id :{
+        type:String,
+        require:true
+    },
+    job_location:{
+        type:String,
+        require:true
+    },
+    job_name:{
         type:String,
         require:true
     },
@@ -13,7 +21,7 @@ const ContactSchema = mongoose.Schema({
         type:String,
         require:true
     },
-    tt:{
+    start_date:{
         type:String,
         require:true
     }

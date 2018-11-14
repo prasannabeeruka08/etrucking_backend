@@ -4,25 +4,27 @@ const Jobs = require('../modals/jobs')
 
 
 //reterving data
-router.get('/Jobs', (req, res, next)=>{
+router.get('/jobs', (req, res, next)=>{
     Jobs.find(function(err,driver_details){
          res.json(driver_details);
     })
 })
 
 //add contact
-router.post('/Job',(req, res, next)=>{
+router.post('/job',(req, res, next)=>{
     let newJobs = new Jobs({
-        driver_name : req.body.driver_name,
-        driver_id : req.body.driver_id,
-        tt : req.body.tt,
+        customer_id : req.body.customer_id,
+        customer_name : req.body.customer_name,
+        job_name : req.body.job_name,
+        job_location : req.body.job_location,
+        start_date : req.body.start_date,
         status : req.body.status
     });
     newJobs.save((err,Driver)=>{
         if(err){
-            res.json({msg: 'failed to add contact : '});
+            res.json({msg: 'fail'});
         }else{
-             res.json({msg: 'contact added successfully'});
+             res.json({msg: 'success'});
         }
     })
 })
