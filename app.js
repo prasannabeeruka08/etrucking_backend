@@ -20,14 +20,14 @@ const job = require('./routes/jobs');
 
 //connect to mongodb
 mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://kranthi:a12341234@ds139138.mlab.com:39138/etrucking_dev', {
-//   useMongoClient: true,
-//   connectTimeoutMS: 1000
-// });
-mongoose.connect('mongodb://localhost:27017/etrucking', {
+mongoose.connect('mongodb://kranthi:a12341234@ds139138.mlab.com:39138/etrucking_dev', {
   useMongoClient: true,
   connectTimeoutMS: 1000
 });
+// mongoose.connect('mongodb://localhost:27017/etrucking', {
+//   useMongoClient: true,
+//   connectTimeoutMS: 1000
+// });
 
 //on connection 
 mongoose.connection.on('connection', ()=>{
