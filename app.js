@@ -44,7 +44,7 @@ mongoose.connection.on('error', (err)=>{
 
 //port number
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 //middleware - cors
 app.use(cors());

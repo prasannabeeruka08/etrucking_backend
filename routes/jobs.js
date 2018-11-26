@@ -40,4 +40,19 @@ router.delete('/Job/:id',(req, res, next)=>{
        })
 })
 
+//get jobs of a customer
+router.post('/custjobs',(req, res, next)=>{
+    console.log(req.body.customer_id)
+
+    Jobs.find({ customer_id: req.body.customer_id }, function (err, result) {
+    if(err){
+        console.log(result)
+        res.json(err);
+   }else{
+        console.log(result)
+        res.json(result);
+   }
+    })
+})
+
 module.exports = router;
