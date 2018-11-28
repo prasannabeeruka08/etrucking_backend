@@ -42,14 +42,14 @@ router.delete('/Job/:id',(req, res, next)=>{
 
 //get jobs of a customer
 router.post('/custjobs',(req, res, next)=>{
-    console.log(req.body.customer_id)
+    console.log("request for /custjobs"+req.body.customer_id)
 
     Jobs.find({ customer_id: req.body.customer_id }, function (err, result) {
     if(err){
-        console.log(result)
+        console.log("error for /custjobs"+result)
         res.json(err);
    }else{
-        console.log(result)
+        console.log("response body for /custjobs"+result)
         res.json(result);
    }
     })

@@ -14,7 +14,7 @@ const route = require('./routes/route');
 const employee = require('./routes/employee');
 const customer = require('./routes/customer');
 const driver = require('./routes/driver');
-const truck = require('./routes/truck');
+const fleet = require('./routes/fleet_router');
 const job = require('./routes/jobs');
 
 
@@ -58,7 +58,7 @@ app.use('/api', route);
 app.use('/emp',employee);
 app.use('/cust',customer);
 app.use('/dri',driver);
-app.use('/tru',truck);
+app.use('/fle',fleet);
 app.use('/job',job);
 
 //testing server
