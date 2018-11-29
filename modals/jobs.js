@@ -9,6 +9,10 @@ const ContactSchema = mongoose.Schema({
         type:String,
         require:true
     },
+    job_id:{
+        type:String,
+        require:true
+    },
     job_location:{
         type:String,
         require:true

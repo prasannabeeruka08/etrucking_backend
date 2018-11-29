@@ -16,10 +16,13 @@ router.post('/job',(req, res, next)=>{
         customer_id : req.body.customer_id,
         customer_name : req.body.customer_name,
         job_name : req.body.job_name,
+        job_id : req.body.job_id,
         job_location : req.body.job_location,
         start_date : req.body.start_date,
         status : req.body.status
     });
+    console.log("req body   ---  "+req.body.job_id);
+    console.log(newJobs);
     newJobs.save((err,Driver)=>{
         if(err){
             res.json({msg: 'fail'});
