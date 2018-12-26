@@ -66,14 +66,14 @@ router.post('/custjobs',(req, res, next)=>{
 
 //get jobs of a customer
 router.post('/jobdetails',(req, res, next)=>{
-    console.log("request for /custjobs"+req.body.customer_id)
+    console.log("request for /jobdetails"+req.body.job_id)
 
     Jobs.find({ job_id: req.body.job_id }, function (err, result) {
     if(err){
-        console.log("error for /custjobs"+result)
+        console.log("error for /jobdetails"+result)
         res.json(err);
    }else{
-        console.log("response body for /custjobs"+result)
+        console.log("response body for /jobdetails"+result)
         res.json(result);
    }
     })
