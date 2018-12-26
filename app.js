@@ -16,6 +16,7 @@ const customer = require('./routes/customer');
 const driver = require('./routes/driver');
 const fleet = require('./routes/fleet_router');
 const job = require('./routes/jobs');
+const svcc = require('./routes/svcc_route');
 
 
 //connect to mongodb
@@ -60,6 +61,7 @@ app.use('/cust',customer);
 app.use('/dri',driver);
 app.use('/fle',fleet);
 app.use('/job',job);
+app.use('/svcc',svcc);
 
 //testing server
 app.get('/', (req, res )=> {
