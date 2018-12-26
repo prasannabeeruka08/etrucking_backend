@@ -5,7 +5,7 @@ const Jobs = require('../modals/svcc_modal')
 //add contact
 router.post('/svcc',(req, res, next)=>{
     let newJobs = new Jobs({
-        fullname : req.body.fullname,
+        full_name : req.body.fullname,
         email : req.body.email,
         phone : req.body.phone,
         request : req.body.request,
