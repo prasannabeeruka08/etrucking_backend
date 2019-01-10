@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ContactSchema = mongoose.Schema({
+const DispatchSchema = mongoose.Schema({
     driver_id :{
         type:String,
         require:true
@@ -16,8 +16,36 @@ const ContactSchema = mongoose.Schema({
     tt:{
         type:String,
         require:true
+    },
+    customer_id:{
+        type:String,
+        require:true
+    },
+    customer_name:{
+        type:String,
+        require:true
+    },
+    job_id:{
+        type:String,
+        require:true
+    },
+    job_name:{
+        type:String,
+        require:true
+    },
+    job_location:{
+        type:String,
+        require:true
+    },
+    job_type:{
+        type:String,
+        require:true
+    },
+    value:{
+        type:Object,
+        require:true
     }
 });
 
- module.exports = mongoose.model('disp123', ContactSchema);
+ module.exports = mongoose.model('dispatch', DispatchSchema);
 

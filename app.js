@@ -16,6 +16,7 @@ const customer = require('./routes/customer');
 const driver = require('./routes/driver');
 const fleet = require('./routes/fleet_router');
 const job = require('./routes/jobs');
+const dispatch = require('./routes/dispatch');
 const svcc = require('./routes/svcc_route');
 
 
@@ -62,6 +63,7 @@ app.use('/dri',driver);
 app.use('/fle',fleet);
 app.use('/job',job);
 app.use('/svcc',svcc);
+app.use('/disp',dispatch);
 
 //testing server
 app.get('/', (req, res )=> {

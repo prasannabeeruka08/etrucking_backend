@@ -13,6 +13,7 @@ router.post('/svcc18',(req, res, next)=>{
         phone : req.body.phone,
         request : req.body.request
     }); 
+    console.log("req ++++"+ req);
     newReq.save((err,Driver)=>{
         if(err){
             res.json({msg: 'fail'});

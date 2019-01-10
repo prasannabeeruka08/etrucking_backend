@@ -27,7 +27,7 @@ router.post('/newjob',(req, res, next)=>{
         notes: req.body.notes,
         status : req.body.status
     });
-    console.log("req body   ---  "+req.body.job_id);
+    console.log(req.body);
     console.log(newJobs);
     newJobs.save((err,Driver)=>{
         if(err){
@@ -52,7 +52,6 @@ router.delete('/Job/:id',(req, res, next)=>{
 //get jobs of a customer
 router.post('/custjobs',(req, res, next)=>{
     console.log("request for /custjobs"+req.body.customer_id)
-
     Jobs.find({ customer_id: req.body.customer_id }, function (err, result) {
     if(err){
         console.log("error for /custjobs"+result)
