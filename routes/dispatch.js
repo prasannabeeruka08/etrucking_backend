@@ -25,23 +25,27 @@ router.post('/newdispatch',(req, res, next)=>{
     })
 })
 
-//reterving data
-router.get('/dispatch', (req, res, next)=>{
-    dispatch.find(function(err,driver_details){
-         res.json(driver_details);
-    })
-})
-router.post('/custjobs',(req, res, next)=>{
-    console.log("request for /custjobs"+req.body.customer_id)
-    Jobs.find({ customer_id: req.body.customer_id }, function (err, result) {
+//get waiting dispatch info 
+router.post('/dispatchW',(req, res, next)=>{
+    console.log("request for /dispatchW"+req.body.job_id)
+    dispatch.find({ job_id: req.body.job_id,status : "wait" }, function (err, result) {
     if(err){
         console.log("error for /custjobs"+result)
         res.json(err);
    }else{
         console.log("response body for /custjobs"+result)
+        
+        dispatch.remove({job_id: req.body.job_id,status : "wait" }, function (err, results){
+            if(err){
+                 res.json(err);
+            }
+        })
         res.json(result);
    }
     })
 })
+
+
+
 
 module.exports = router;

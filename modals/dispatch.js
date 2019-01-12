@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const DispatchSchema = mongoose.Schema({
+    date:{
+        type:String,
+        require:true
+    },
     driver_id :{
         type:String,
         require:true

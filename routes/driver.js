@@ -20,7 +20,7 @@ router.post('/driver',(req, res, next)=>{
     });
     newDriver.save((err,Driver)=>{
         if(err){
-            res.json({msg: 'fail'});
+            res.json({msg: 'Something went wrong. Please try again.'});
         }else{
              res.json({msg: 'success'});
         }
@@ -36,6 +36,20 @@ router.delete('/driver/:id',(req, res, next)=>{
                res.json({msg:'Success'});
            }
        })
+})
+
+//get driver to dispatch
+router.post('/dispDrivers',(req, res, next)=>{
+    console.log("request for /dispDrivers"+req.body.tt)
+    Driver.find({ tt: req.body.tt}, function (err, result) {
+    if(err){
+        console.log("error for /dispDrivers"+result)
+        res.json(err);
+   }else{
+        res.json(result);
+   }
+   
+ })
 })
 
 module.exports = router;
