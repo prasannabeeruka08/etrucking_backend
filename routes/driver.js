@@ -41,7 +41,7 @@ router.delete('/driver/:id',(req, res, next)=>{
 //get driver to dispatch
 router.post('/dispDrivers',(req, res, next)=>{
     console.log("request for /dispDrivers"+req.body.tt)
-    Driver.find({ tt: req.body.tt}, function (err, result) {
+    Driver.find({ tt: req.body.tt,status: "available"}, function (err, result) {
     if(err){
         console.log("error for /dispDrivers"+result)
         res.json(err);

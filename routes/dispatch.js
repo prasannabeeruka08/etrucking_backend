@@ -4,7 +4,7 @@ const dispatch = require('../modals/dispatch')
 
 router.post('/newdispatch',(req, res, next)=>{
     
-    console.log(req.body.custId);
+    console.log(req.body.value);
     
     let newDispatch = new dispatch({
         customer_id : req.body.custId,
