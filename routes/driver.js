@@ -54,7 +54,7 @@ router.post('/dispDrivers',(req, res, next)=>{
 
 router.post('/EDDrivers',(req, res, next)=>{
     console.log("request for /dispDrivers"+req.body.tt)
-    Driver.find({ tt:'End-Dump','$or':[{status:'assigned'},{status:'available'}]}, function (err, result) {
+    Driver.find({ tt:'End-Dump','$or':[{status:'Assigned'},{status:'Available'}]}, function (err, result) {
     if(err){
         console.log("error for /EDDrivers"+result)
         res.json(err);
@@ -67,7 +67,7 @@ router.post('/EDDrivers',(req, res, next)=>{
 
 router.post('/SDDrivers',(req, res, next)=>{
     console.log("request for /dispDrivers"+req.body.tt)
-    Driver.find({ tt:'Super-Dump','$or':[{status:'assigned'},{status:'available'}]}, function (err, result) {
+    Driver.find({ tt:'Super-Dump','$or':[{status:'Assigned'},{status:'Available'}]}, function (err, result) {
     if(err){
         console.log("error for /SDDrivers"+result)
         res.json(err);
@@ -80,7 +80,7 @@ router.post('/SDDrivers',(req, res, next)=>{
 
 router.post('/DBDrivers',(req, res, next)=>{
     console.log("request for /dispDrivers"+req.body.tt)
-    Driver.find({ tt:'Double-Bottom','$or':[{status:'assigned'},{status:'available'}]}, function (err, result) {
+    Driver.find({ tt:'Double-Bottom','$or':[{status:'Assigned'},{status:'Available'}]}, function (err, result) {
     if(err){
         console.log("error for /DBDrivers"+result)
         res.json(err);
@@ -93,7 +93,7 @@ router.post('/DBDrivers',(req, res, next)=>{
 
 router.post('/TenWDrivers',(req, res, next)=>{
     console.log("request for /dispDrivers"+req.body.tt)
-    Driver.find({ tt:'10-wheeler','$or':[{status:'assigned'},{status:'available'}]}, function (err, result) {
+    Driver.find({ tt:'10-wheeler','$or':[{status:'Assigned'},{status:'Available'}]}, function (err, result) {
     if(err){
         console.log("error for /TenWDrivers"+result)
         res.json(err);
